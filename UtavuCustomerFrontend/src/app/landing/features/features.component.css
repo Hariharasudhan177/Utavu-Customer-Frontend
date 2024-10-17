@@ -1,0 +1,55 @@
+#features {
+    text-align: center; /* Center the text */
+    padding: 40px 20px; /* Add padding on top/bottom and some space on sides */
+    background-color: #f8f9fa; /* Light background color for contrast */
+}
+
+.features-heading {
+    text-align: left; /* Align the heading to the left */
+    font-size: 1.5em; /* Size of the heading text */
+    margin-bottom: 30px; /* Space below the heading */
+    font-weight: bold; /* Make it bold */
+}
+
+.feature-list {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 boxes per row */
+    gap: 20px; /* Fixed space between grid items */
+    justify-content: center; /* Center the entire grid within the container */
+    align-items: center; /* Align items vertically centered */
+}
+
+.feature-item {
+    background-color: #ffffff; /* White background for the boxes */
+    border: 1px solid #dddddd; /* Light border for the boxes */
+    border-radius: 8px; /* Slightly rounded corners */
+    padding: 20px; /* Padding inside the boxes */
+    text-align: center; /* Center text inside the item */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.feature-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.feature-item h3 {
+    font-size: 1.2em; /* Size of feature title */
+    margin: 0 0 10px 0; /* Space below the title */
+}
+
+.feature-item p {
+    font-size: 1em; /* Size of feature description */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .feature-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-list {
+        grid-template-columns: 1fr; /* 1 box per row */
+    }
+}

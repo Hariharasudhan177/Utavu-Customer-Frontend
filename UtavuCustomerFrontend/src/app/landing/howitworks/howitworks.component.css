@@ -1,0 +1,56 @@
+#how-it-works {
+    padding: 40px;
+    background-color: #f9f9f9; /* Light grey background */
+    text-align: left; /* Left align the text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin: 20px; /* Margin around the section */
+}
+
+#how-it-works h2 {
+    font-size: 28px; /* Larger font size for heading */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #333; /* Dark color for heading */
+    font-weight: bold; /* Bold text for emphasis */
+    border-bottom: 2px solid #FFD700; /* Gold line below heading */
+    display: inline-block; /* Makes the line fit the width of the text */
+}
+
+#how-it-works ol {
+    list-style-type: none; /* Remove default numbering */
+    padding-left: 0; /* Remove left padding */
+}
+
+#how-it-works li {
+    background-color: #fff; /* White background for list items */
+    margin-bottom: 15px; /* Space between items */
+    padding: 15px; /* Padding inside items */
+    border-radius: 8px; /* Rounded corners for items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for items */
+    font-size: 18px; /* Font size for the steps */
+    line-height: 1.5; /* Increase line height */
+    color: #555; /* Slightly lighter color for text */
+    position: relative; /* Relative positioning for the icon */
+}
+
+#how-it-works li::before {
+    content: ''; /* Add content before the list item */
+    position: absolute; /* Position it absolutely */
+    left: -25px; /* Adjust positioning */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    width: 12px; /* Circle width */
+    height: 12px; /* Circle height */
+    border-radius: 50%; /* Make it a circle */
+    background-color: #FFD700; /* Gold color */
+}
+
+@media (max-width: 768px) {
+    #how-it-works h2 {
+        font-size: 24px; /* Smaller font size for smaller screens */
+    }
+
+    #how-it-works li {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
