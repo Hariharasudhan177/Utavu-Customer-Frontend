@@ -1,0 +1,88 @@
+.hero {
+    background-color: #FFD700;
+    /* Light Grey */
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+.hero p {
+    margin: 3px; /* Remove margin */
+}
+
+.hero-content {
+    flex: 1;
+    /* Allow content to take up available space */
+    text-align: left;
+    /* Left-align text */
+}
+
+.input-container {
+    margin-top: 20px;
+    /* Space between the text and input */
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    /* Optional styling */
+    border-radius: 4px;
+    /* Optional styling */
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Optional styling */
+    border-radius: 4px;
+    /* Optional styling */
+}
+
+.search-button {
+    padding: 10px 20px;
+    /* Button padding */
+    background-color: white;
+    /* Yellow color */
+    border: none;
+    /* Remove default border */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer on hover */
+    margin-top: 20px;
+}
+
+.search-button:hover {
+    background-color: #FFC107;
+    /* Slightly darker yellow on hover */
+}
+
+
+.hero-image {
+    flex: 0 0 50%;
+    /* Adjust size as needed */
+}
+
+.hero-image img {
+    max-width: 100%;
+    /* Responsive image */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.image-attribution {
+    font-size: 0.5em; /* Adjust the size to your preference */
+    color: #666; /* Optional: Change color to grey */
+    margin-top: 0.5em; /* Spacing above the text */
+}
+
+.text-underline {
+    text-decoration: underline; /* Underline text */
+}
+
+.font-size-sm {
+    font-size: 0.8em; /* Smaller font size for links */
+}
