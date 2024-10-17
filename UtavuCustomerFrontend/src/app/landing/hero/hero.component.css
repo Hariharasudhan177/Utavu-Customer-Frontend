@@ -1,76 +1,51 @@
 .hero {
-    background-color: #FFD700;
-    /* Light Grey */
+    background-color: #FFD700; /* Yellow background */
     height: 80vh;
     display: flex;
+    flex-direction: row; /* Default to row */
     justify-content: space-between;
     align-items: center;
     padding: 20px 100px;
-}
-
-.hero p {
-    margin: 3px; /* Remove margin */
+    box-sizing: border-box; /* Include padding in width/height */
 }
 
 .hero-content {
     flex: 1;
-    /* Allow content to take up available space */
     text-align: left;
-    /* Left-align text */
 }
 
 .input-container {
     margin-top: 20px;
-    /* Space between the text and input */
 }
 
-input[type="text"] {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    /* Optional styling */
-    border-radius: 4px;
-    /* Optional styling */
-}
-
+input[type="text"],
 select {
     padding: 10px;
     border: 1px solid #ccc;
-    /* Optional styling */
     border-radius: 4px;
-    /* Optional styling */
+    margin-right: 10px;
 }
 
 .search-button {
     padding: 10px 20px;
-    /* Button padding */
     background-color: white;
-    /* Yellow color */
     border: none;
-    /* Remove default border */
     border-radius: 4px;
-    /* Rounded corners */
     cursor: pointer;
-    /* Pointer on hover */
     margin-top: 20px;
 }
 
 .search-button:hover {
-    background-color: #FFC107;
-    /* Slightly darker yellow on hover */
+    background-color: #FFC107; /* Darker yellow on hover */
 }
 
-
 .hero-image {
-    flex: 0 0 50%;
-    /* Adjust size as needed */
+    flex: 0 0 50%; /* Adjust size as needed */
 }
 
 .hero-image img {
-    max-width: 100%;
-    /* Responsive image */
+    max-width: 100%; /* Responsive image */
     height: auto;
-    /* Maintain aspect ratio */
 }
 
 .image-attribution {
@@ -85,4 +60,23 @@ select {
 
 .font-size-sm {
     font-size: 0.8em; /* Smaller font size for links */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .hero {
+        flex-direction: column; /* Stack content vertically */
+        padding: 20px; /* Adjust padding for smaller screens */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%; /* Take full width */
+        text-align: center; /* Center align text on smaller screens */
+    }
+
+    .hero-image {
+        margin-top: 20px; /* Space between image and content */
+    }
 }
