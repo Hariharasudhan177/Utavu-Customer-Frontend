@@ -1,38 +1,39 @@
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
 .hero {
     background-color: #FFD700; /* Yellow background */
-    height: 80vh;
-    display: flex;
-    flex-direction: row; /* Default to row */
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 100px;
+    height: 80vh; /* Set height for larger screens */
+    display: flex; /* Flex layout */
+    flex-direction: row; /* Default to row layout */
+    justify-content: space-between; /* Space between content */
+    align-items: center; /* Center align items */
+    padding: 20px 100px; /* Padding for larger screens */
     box-sizing: border-box; /* Include padding in width/height */
 }
 
 .hero-content {
-    flex: 1;
-    text-align: left;
+    flex: 1; /* Allow content to take available space */
+    text-align: left; /* Left align text for larger screens */
 }
 
 .input-container {
-    margin-top: 20px;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Space above input container */
+    gap: 10px; /* Space between elements */
 }
 
 input[type="text"],
-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
+select,
 .search-button {
-    padding: 10px 20px;
-    background-color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
+    padding: 10px; /* Same padding for consistency */
+    border: 1px solid #ccc; /* Same border for all */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%; /* Use full width for consistency */
+    max-width: 300px; /* Optional: Limit max width */
 }
 
 .search-button:hover {
@@ -40,18 +41,18 @@ select {
 }
 
 .hero-image {
-    flex: 0 0 50%; /* Adjust size as needed */
+    flex: 0 0 50%; /* Fixed size for image */
 }
 
 .hero-image img {
     max-width: 100%; /* Responsive image */
-    height: auto;
+    height: auto; /* Maintain aspect ratio */
 }
 
 .image-attribution {
-    font-size: 0.5em; /* Adjust the size to your preference */
-    color: #666; /* Optional: Change color to grey */
-    margin-top: 0.5em; /* Spacing above the text */
+    font-size: 0.5em; /* Smaller font size */
+    color: #666; /* Grey color for attribution */
+    margin-top: 0.5em; /* Spacing above attribution text */
 }
 
 .text-underline {
@@ -63,7 +64,7 @@ select {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+@media (max-width: 768px) {
     .hero {
         flex-direction: column; /* Stack content vertically */
         padding: 20px; /* Adjust padding for smaller screens */
@@ -72,11 +73,24 @@ select {
 
     .hero-content,
     .hero-image {
-        width: 100%; /* Take full width */
-        text-align: center; /* Center align text on smaller screens */
+        width: 100%; /* Full width for smaller screens */
+        text-align: left; /* Left align text */
     }
 
-    .hero-image {
-        margin-top: 20px; /* Space between image and content */
+    .input-container {
+        flex-direction: column; /* Stack inputs vertically */
+        align-items: flex-start; /* Align items to the start */
+        margin-top: 10px; /* Adjust space for smaller screens */
+    }
+
+    input[type="text"]
+    select,
+    .search-button {
+        width: 100%; /* Full width for inputs and button on mobile */
+        margin: 5px 0; /* Space between inputs */
+    }
+
+    .search-button {
+        margin-left: 0; /* Remove left margin on mobile */
     }
 }

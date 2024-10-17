@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    height: 40px;
+    height: 40px; /* Set a consistent height */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -17,16 +17,17 @@
 
 .logo h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Keep a consistent font size */
     color: black;
 }
 
 .auth-links {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 15px; /* Space between links */
 }
 
+/* Button styles */
 .auth-links a {
     text-decoration: none;
     color: black;
@@ -41,6 +42,7 @@
     color: white;
 }
 
+/* Hamburger icon styles */
 .hamburger {
     font-size: 1.5rem; /* Size of the hamburger icon */
     cursor: pointer; /* Pointer cursor on hover */
@@ -61,6 +63,27 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .header {
+        padding: 10px 15px; /* Adjust padding */
+        flex-wrap: nowrap; /* Prevent wrapping to keep height consistent */
+        height: 60px; /* Fixed height */
+    }
+
+    .logo h1 {
+        font-size: 1.5rem; /* Reduce logo size on mobile */
+    }
+
+    .auth-links {
+        justify-content: flex-end; /* Align items to the right */
+        width: auto; /* Allow natural width */
+        margin-top: 0; /* Reset margin */
+    }
+
+    .auth-links a {
+        font-size: 1rem; /* Reduce font size for buttons */
+        padding: 5px 10px; /* Adjust padding */
+    }
+
     .navigation {
         display: none; /* Keep it hidden on mobile by default */
         flex-direction: column; /* Stack links vertically */
@@ -75,5 +98,15 @@
 
     .navigation.active {
         display: flex; /* Show when active */
+    }
+
+    .navigation ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Space between links */
+    }
+
+    .navigation ul li a {
+        font-size: 1rem; /* Adjust font size for navigation links */
+        padding: 8px 10px; /* Adjust padding for navigation links */
     }
 }
