@@ -28,7 +28,7 @@ export class SignupComponent {
 
   initGoogleAuth() {
     gapi.auth2.init({
-      client_id: '602394270286-8a1lkumsnfio643jsmrqa69kd38lc6ch.apps.googleusercontent.com',  // Replace with your Client ID
+      client_id: '602394270286-1prasg59qk03gaai95c4nllus0ooa0re.apps.googleusercontent.com',  // Replace with your Client ID
       scope: 'email',
       plugin_name: 'makingitwork'
     });
