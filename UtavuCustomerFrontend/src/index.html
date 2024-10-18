@@ -9,19 +9,12 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://apis.google.com/js/api.js" async defer onload="onGoogleApiLoad()"></script>
+  <script src="https://apis.google.com/js/api.js" async defer></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body class="mat-typography">
   <app-root></app-root>
-  <script>
-    function onGoogleApiLoad() {
-      gapi.load('auth2', function () {
-        // Initialization logic can go here if needed
-      });
-    }
-  </script>
 </body>
 
 </html>
