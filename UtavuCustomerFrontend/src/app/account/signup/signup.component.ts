@@ -47,7 +47,7 @@ export class SignupComponent {
       const idToken = result.getAuthResponse().id_token; // Get the ID token
 
       // Send the ID token to your backend for verification and JWT generation
-      this.http.post('https://utavucbwa-dhhjbxguaydsecdt.uksouth-01.azurewebsites.net/signup', { idToken: idToken })
+      this.http.post('602394270286-1prasg59qk03gaai95c4nllus0ooa0re.apps.googleusercontent.com', { idToken: idToken })
       .subscribe({
         next: (response) => {
           console.log('User signed up and JWT received:', response);
