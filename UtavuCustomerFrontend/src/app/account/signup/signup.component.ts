@@ -17,9 +17,13 @@ export class SignupComponent {
   constructor(private router: Router, private authService: AuthService, private http : HttpClient) { }
 
   ngOnInit(): void {
-    gapi.load('auth2', () => {
-      this.initGoogleAuth();
-    });
+    if (typeof gapi !== 'undefined') {
+      gapi.load('auth2', () => {
+        this.initGoogleAuth();
+      });
+    } else {
+      console.error('gapi is not defined');
+    }
   }
 
   initGoogleAuth() {
