@@ -3,7 +3,7 @@ footer {
     color: #fff; /* White text color */
     padding: 20px 0; /* Vertical padding */
     text-align: center; /* Center align text */
-    margin-top: 40px; /* Space above the footer */
+    margin-top: 0px; /* Space above the footer */
 }
 
 .footer-links {

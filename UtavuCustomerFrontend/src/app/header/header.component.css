@@ -21,20 +21,50 @@
     color: black;
 }
 
+.logo-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit;       /* Use the current color of the parent element */
+    font-size: inherit;   /* Inherit font size from h1 */
+    font-weight: normal;  /* Reset font weight if necessary */
+}
+
+/* Optional: Add hover effect */
+.logo-link:hover {
+    color: #FFC300; /* Change color on hover (you can customize this) */
+}
+
 .auth-links {
     display: flex;
     align-items: center;
     gap: 15px; /* Space between links */
+    position: relative; /* Context for z-index */
+    z-index: 10; /* Ensures auth links are on top */
 }
 
-/* Button styles */
-.auth-links a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
-    padding: 5px 10px;
-    border: 1px solid black;
-    border-radius: 5px;
+.auth-links a, 
+.auth-links button { /* Add button styles here */
+    text-decoration: none; /* Remove underline for buttons */
+    color: black; /* Text color */
+    font-size: 1.2rem; /* Font size */
+    padding: 5px 10px; /* Padding for buttons */
+    border: 1px solid black; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    background-color: transparent; /* Default background color */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.auth-links .user-button,
+.auth-links .logout-button {
+    background-color: black; /* Background color */
+    color: white; /* Text color */
+}
+
+/* Optional: Add hover effect for buttons */
+.auth-links a:hover, /* For login and signup links */
+.auth-links button:hover { /* For user and logout buttons */
+    background-color: #FFC300; /* Change background color on hover */
+    color: black; /* Change text color on hover */
 }
 
 .auth-links .signup {
