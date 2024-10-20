@@ -16,7 +16,9 @@ export class ProfileComponent {
     name: '',
     email: '',
     address: '',
-    availableFor: ''
+    jobType: '', // Added jobType field
+    generalAvailabilityStartTime: '', // Added start time field
+    generalAvailabilityEndTime: '' // Added end time field
   };
 
   constructor(private authService: AuthService, private http: HttpClient) {}
@@ -32,10 +34,12 @@ export class ProfileComponent {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (data) => {
-        this.user.name = data.name;       // Auto-populate name
-        this.user.email = data.email;     // Auto-populate email
-        this.user.address = data.address; // Fetch other user data
-        this.user.availableFor = data.availableFor;
+        this.user.name = data.name;
+        this.user.email = data.email;
+        this.user.address = data.address;
+        this.user.jobType = data.jobType; // Bind job type from API response
+        this.user.generalAvailabilityStartTime = data.generalAvailabilityStartTime; // Bind start time
+        this.user.generalAvailabilityEndTime = data.generalAvailabilityEndTime; // Bind end time
       },
       error: (error) => {
         console.error('Error fetching user profile:', error);
