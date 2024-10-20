@@ -29,7 +29,7 @@ export class ProfileComponent {
 
   fetchUserProfile() {
     const token = this.authService.getToken();
-    this.http.get<any>('http://localhost:5004/profile', {
+    this.http.get<any>('https://utavucbwa-dhhjbxguaydsecdt.uksouth-01.azurewebsites.net/profile', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (data) => {
@@ -70,7 +70,7 @@ export class ProfileComponent {
       generalAvailabilityEndTime: this.formatTimeWithSeconds(this.user.generalAvailabilityEndTime)      // e.g., "23:23:00"
     };
 
-    this.http.put('http://localhost:5004/profile', updatedProfile, {
+    this.http.put('https://utavucbwa-dhhjbxguaydsecdt.uksouth-01.azurewebsites.net/profile', updatedProfile, {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: () => {
