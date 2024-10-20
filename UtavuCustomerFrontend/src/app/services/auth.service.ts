@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   // BehaviorSubject to track the current user
   private userSubject = new BehaviorSubject<string | null>(this.getLocalStorageItem('userName'));
   user$ = this.userSubject.asObservable();
+  private tokenSubject = new BehaviorSubject<string | null>(this.getLocalStorageItem('token'));
+  token$ = this.tokenSubject.asObservable();
+
+  constructor() { }
 
   // Safe localStorage getter
   private getLocalStorageItem(key: string): string | null {
@@ -22,19 +26,26 @@ export class AuthService {
     return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
   }
 
-  // Call this when the user logs in
-  setUser(userName: string) {
-    if (this.isBrowser()) {
-      localStorage.setItem('userName', userName);
-      this.userSubject.next(userName);
-    }
+  setUser(userName: string, token:string) {
+    localStorage.setItem('userName', userName);
+    localStorage.setItem('token', token);
+    this.userSubject.next(userName);
+    this.tokenSubject.next(token); 
   }
 
-  // Call this when the user logs out
-  clearUser() {
-    if (this.isBrowser()) {
-      localStorage.clear();
-      this.userSubject.next(null);
-    }
+  clearUser(): Observable<void> {
+    localStorage.setItem('userName', '');
+    localStorage.setItem('token', '');
+    this.userSubject.next(null);
+    this.tokenSubject.next(null); // Clear token on logout
+    return of(); // Return an observable
+  }
+
+  getToken(): string | null {
+    return this.getLocalStorageItem('token'); // Returns the stored token
+  }
+
+  setToken(newToken: string) {
+    this.tokenSubject.next(newToken); // Store the token when user logs in
   }
 }

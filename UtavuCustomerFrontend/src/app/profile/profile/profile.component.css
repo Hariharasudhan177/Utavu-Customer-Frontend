@@ -1,0 +1,64 @@
+/* Custom styles for the form */
+body {
+  background-color: #f0f2f5; /* Light background color for the entire page */
+  font-family: Arial, sans-serif; /* Font style for the page */
+}
+
+.container {
+  max-width: 600px; /* Set max width for the form */
+  margin: auto; /* Center the form on the page */
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 5px; /* Rounded corners */
+  padding: 20px; /* Add some padding inside the form */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+h2 {
+  font-size: 24px; /* Larger font size for the heading */
+  color: #343a40; /* Darker color for text */
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Space between form groups */
+}
+
+label {
+  font-weight: bold; /* Bold labels */
+  color: #495057; /* Dark color for labels */
+}
+
+input.form-control {
+  border: 1px solid #ced4da; /* Default border color */
+  border-radius: 4px; /* Rounded corners for inputs */
+  padding: 10px; /* Padding for better spacing */
+  transition: border-color 0.2s; /* Transition effect for border color */
+}
+
+input.form-control:focus {
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow effect on focus */
+}
+
+button.btn {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Padding for button */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.2s; /* Transition effect for button */
+}
+
+button.btn:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}
+
+/* Optional: Add responsiveness */
+@media (max-width: 600px) {
+  .container {
+      padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  h2 {
+      font-size: 20px; /* Smaller font size for smaller screens */
+  }
+}

@@ -8,12 +8,13 @@ import { AuthService } from '../services/auth.service';  // Import AuthService
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'] // Corrected from styleUrl to styleUrls
 })
 export class HeaderComponent implements OnInit {
   hideAuthLinks = false;
   userName: string | null = null;
   userLoggedIn: boolean = false;
+  showDropdown: boolean = false; // New property to control dropdown visibility
 
   constructor(private router: Router, private authService: AuthService) {
     // Subscribe to router events and check the URL
@@ -32,8 +33,17 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown; // Toggle dropdown visibility
+  }
+
+  goToProfile() {
+    // Navigate to the profile page
+    this.router.navigate(['/profile']); // Adjust the route as necessary
+    this.showDropdown = false; // Close the dropdown after navigation
+  }
+
   logout() {
-    // Call AuthService to clear user state
     this.authService.clearUser();
   }
 }

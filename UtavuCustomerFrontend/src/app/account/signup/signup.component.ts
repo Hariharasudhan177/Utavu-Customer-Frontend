@@ -49,10 +49,10 @@ export class SignupComponent {
       // Send the ID token to your backend for verification and JWT generation
       this.http.post('https://utavucbwa-dhhjbxguaydsecdt.uksouth-01.azurewebsites.net/signup', { idToken: idToken })
       .subscribe({
-        next: (response) => {
+        next: (response:any) => {
           console.log('User signed up and JWT received:', response);
           const userName = result.getBasicProfile().getName();
-          this.authService.setUser(userName);
+          this.authService.setUser(userName, response.token);
           this.router.navigate(['/']);
         },
         error: (error) => {

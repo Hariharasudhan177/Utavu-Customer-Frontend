@@ -91,6 +91,41 @@
     padding: 0;
 }
 
+.user-button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc; /* Adjust border as needed */
+    border-radius: 4px;
+    background-color: #f0f0f0; /* Background for button */
+}
+
+.dropdown {
+    position: absolute; /* Keep absolute positioning for dropdown */
+    top: 100%; /* Position it below the user button */
+    left: 0; /* Align to the left of the user button */
+    width: 100%; /* Set the dropdown to the same width as the button */
+    background-color: #fff; /* Background for dropdown */
+    border: 1px solid #ccc; /* Border for dropdown */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.dropdown-option {
+    padding: 0.5rem 1rem; /* Space for links */
+    color: #333; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width for each option */
+    text-align: left; /* Align text to the left */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0; /* Hover effect */
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .header {
