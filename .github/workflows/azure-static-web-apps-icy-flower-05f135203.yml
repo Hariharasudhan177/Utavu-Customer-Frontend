@@ -51,8 +51,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist/utavu-customer-frontend/browser" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-        env:
-          SWA_BUILD_CONFIGURATION: "test"
+          app_build_command: 'ng build --configuration=test'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
