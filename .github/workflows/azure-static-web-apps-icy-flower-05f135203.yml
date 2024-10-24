@@ -35,7 +35,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist/utavu-customer-frontend/browser" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-          app_build_command: 'npm build-prod'
+          app_build_command: 'npm run build-prod'
       - name: Build And Deploy Test
         id: builddeploy_test
         if: github.ref == 'refs/heads/test'
@@ -50,7 +50,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist/utavu-customer-frontend/browser" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-          app_build_command: 'npm build-test'
+          app_build_command: 'npm run build-test'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
