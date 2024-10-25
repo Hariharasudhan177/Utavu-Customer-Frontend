@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterModule} from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 declare const gapi: any;  // Declare gapi to use Google API
 
@@ -28,7 +29,7 @@ export class SignupComponent {
 
   initGoogleAuth() {
     gapi.auth2.init({
-      client_id: '602394270286-1prasg59qk03gaai95c4nllus0ooa0re.apps.googleusercontent.com',  // Replace with your Client ID
+      client_id: environment.googleClientId,  
       scope: 'email',
       plugin_name: 'makingitwork'
     });
@@ -47,7 +48,7 @@ export class SignupComponent {
       const idToken = result.getAuthResponse().id_token; // Get the ID token
 
       // Send the ID token to your backend for verification and JWT generation
-      this.http.post('https://containertest.kinddesert-b81ba258.australiaeast.azurecontainerapps.io/auth/signup', { idToken: idToken })
+      this.http.post(`${environment.apiUrl}/auth/signup`, { idToken: idToken })
       .subscribe({
         next: (response:any) => {
           console.log('User signed up and JWT received:', response);
