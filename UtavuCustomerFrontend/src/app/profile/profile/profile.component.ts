@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-profile',
@@ -29,7 +30,7 @@ export class ProfileComponent {
 
   fetchUserProfile() {
     const token = this.authService.getToken();
-    this.http.get<any>('https://utavucbwa-dhhjbxguaydsecdt.uksouth-01.azurewebsites.net/profile', {
+    this.http.get<any>(`${environment.apiUrl}/profile`, {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (data) => {
